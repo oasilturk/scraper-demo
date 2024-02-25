@@ -13,18 +13,26 @@ The Scraper Demo Project is designed to integrate and synchronize supplier stock
 To set up the project environment, follow these steps:
 
 1. **Clone the Repository**
-    ```
-    git clone git@github.com:oasilturk/scraper-demo.git
-    ```
-    ```
-    git clone https://github.com/oasilturk/scraper-demo.git
-    ```
+    - For SSH:
+      ```
+      git clone git@github.com:oasilturk/scraper-demo.git
+      ```
+    - For HTTPS:
+      ```
+      git clone https://github.com/oasilturk/scraper-demo.git
+      ```
 
 2. **Set Up Python Virtual Environment**
-    ```
-    python -m venv venv
-    .\venv\bin\activate
-    ```
+    - On Windows:
+      ```
+      python -m venv venv
+      .\venv\Scripts\activate
+      ```
+    - On macOS/Linux:
+      ```
+      python3 -m venv venv
+      source venv/bin/activate
+      ```
 
 3. **Install Dependencies**
     ```
@@ -32,7 +40,7 @@ To set up the project environment, follow these steps:
     ```
 
 4. **MongoDB Setup**
-    - Ensure MongoDB is installed and running on your system.
+    - Ensure MongoDB is installed and running on your system. [MongoDB Installation Guide](https://docs.mongodb.com/manual/installation/)
 
 5. **Configuration**
     - Copy `sample_config.py` to `config.py`.
