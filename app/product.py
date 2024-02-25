@@ -108,7 +108,7 @@ class Product:
         return Product(product_id=product_id, name=name, images=images, **product_attrs)
 
     def format(self):
-        self.name = self.name.capitalize()
+        self.name = self.name.title()
 
         if isinstance(self.price, str):
             try:
