@@ -1,31 +1,15 @@
 import xml.etree.ElementTree as ET
 
-def parse(file_path):
-    tree = ET.parse(file_path)
-    root = tree.getroot()
-    
-    products = []
-    for product in root.findall('Product'):
-        product_data = {
-            'product_id': product.get('ProductId'),
-            'name': product.get('Name'),
-            'images': [],
-            'details': {},
-            'description': None
-        }
+class XMLParser:
+    def __init__(self, file_path):
+        self.file_path = file_path
 
-        for image in product.find('Images'):
-            product_data['images'].append(image.get('Path'))
+    def parse(self):
+        tree = ET.parse(self.file_path)
+        root = tree.getroot()
 
-        for detail in product.find('ProductDetails'):
-            name = detail.get('Name')
-            value = detail.get('Value')
-            product_data['details'][name] = value
+        xml_elements = []
+        for xml_element in root.findall("Product"):
+            xml_elements.append(xml_element)
 
-        description = product.find('Description')
-        if description is not None:
-            product_data['description'] = ''.join(description.itertext())
-
-        products.append(product_data)
-
-    return products
+        return xml_elements
