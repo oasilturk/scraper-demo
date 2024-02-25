@@ -2,6 +2,9 @@ from scheduler import Scheduler
 import time
 import logging
 
+INTERVAL_SECONDS = 3
+SLEEP_SECONDS = 1
+
 
 def main():
     logging.basicConfig(
@@ -10,11 +13,11 @@ def main():
     )
     logging.info("Starting the application")
 
-    scheduler = Scheduler(interval_seconds=3)
+    scheduler = Scheduler(INTERVAL_SECONDS)
     try:
         scheduler.start()
         while True:
-            time.sleep(1)
+            time.sleep(SLEEP_SECONDS)
     except (KeyboardInterrupt, SystemExit):
         scheduler.stop()
 
