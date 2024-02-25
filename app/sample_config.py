@@ -5,4 +5,4 @@ CONN_URI = (
 )
 DB_NAME = "scraper_demo_db"
 COLLECTION_NAME = "products"
-APP_ABS_PATH = os.path.dirname(os.path.abspath(__file__))
+XML_FILE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "lonca-sample.xml")
